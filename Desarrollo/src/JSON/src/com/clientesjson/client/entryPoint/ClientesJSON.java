@@ -1,6 +1,9 @@
-package com.clientesjson.client;
+package com.clientesjson.client.entryPoint;
 
 
+import com.clientesjson.client.dataService.DataService;
+import com.clientesjson.client.dataService.DataServiceAsync;
+import com.clientesjson.client.smartds.SmartGWTRPCDataSource;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;

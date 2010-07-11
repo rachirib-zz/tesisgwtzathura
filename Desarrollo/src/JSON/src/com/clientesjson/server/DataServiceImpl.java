@@ -3,11 +3,10 @@ package com.clientesjson.server;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.clientesjson.client.ClientesDTO;
-import com.clientesjson.client.DataService;
+import com.clientesjson.client.dataService.DataService;
+import com.clientesjson.client.dto.ClientesDTO;
 import com.clientesjson.modelo.Cliente;
 import com.clientesjson.server.businessDelegate.BusinessDelegatorView;
-import com.clientesjson.server.jsonFacade.JsonDBFacade;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 public class DataServiceImpl extends RemoteServiceServlet implements

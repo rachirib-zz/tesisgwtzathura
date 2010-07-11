@@ -1,7 +1,8 @@
-package com.clientesjson.client;
+package com.clientesjson.client.dataService;
 
 import java.util.List;
 
+import com.clientesjson.client.dto.ClientesDTO;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
