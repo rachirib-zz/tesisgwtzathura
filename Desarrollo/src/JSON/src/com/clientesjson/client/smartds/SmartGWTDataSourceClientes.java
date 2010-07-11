@@ -2,8 +2,8 @@ package com.clientesjson.client.smartds;
 
 import java.util.List;
 
-import com.clientesjson.client.dataService.DataService;
-import com.clientesjson.client.dataService.DataServiceAsync;
+import com.clientesjson.client.dataService.DataServiceClientes;
+import com.clientesjson.client.dataService.DataServiceClientesAsync;
 import com.clientesjson.client.dto.ClientesDTO;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
@@ -25,19 +25,19 @@ import com.smartgwt.client.widgets.grid.ListGridRecord;
  * 
  * This is inspired by http://code.google.com/p/smartgwt-extensions/source/browse/trunk/src/main/java/com/smartgwt/extensions/gwtrpcds/client/example/SimpleGwtRPCDS.java
  */
-public class SmartGWTRPCDataSource extends AbstractGWTRPCDataSource {
+public class SmartGWTDataSourceClientes extends AbstractGWTRPCDataSource {
 
 	// TODO is singleton what we want here?
-	private static SmartGWTRPCDataSource instance = null;
+	private static SmartGWTDataSourceClientes instance = null;
 
-	public static SmartGWTRPCDataSource getInstance() {
+	public static SmartGWTDataSourceClientes getInstance() {
 		if (instance == null) {
-			instance = new SmartGWTRPCDataSource();
+			instance = new SmartGWTDataSourceClientes();
 		}
 		return instance;
 	}
 
-	private SmartGWTRPCDataSource() {
+	private SmartGWTDataSourceClientes() {
 		DataSourceField key = new DataSourceIntegerField("id");
 		key.setPrimaryKey(true);
 	    // AutoIncrement on server.
@@ -53,8 +53,8 @@ public class SmartGWTRPCDataSource extends AbstractGWTRPCDataSource {
 	@Override
 	protected void executeFetch(final String requestId,
 			final DSRequest request, final DSResponse response) {
-		DataServiceAsync service = GWT
-				.create(DataService.class);
+		DataServiceClientesAsync service = GWT
+				.create(DataServiceClientes.class);
 		service.fetch(new AsyncCallback<List<ClientesDTO>>() {
 			public void onFailure(Throwable caught) {
 				response.setStatus(RPCResponse.STATUS_FAILURE);
@@ -86,8 +86,8 @@ public class SmartGWTRPCDataSource extends AbstractGWTRPCDataSource {
 		ListGridRecord rec = new ListGridRecord(data);
 		ClientesDTO testRec = new ClientesDTO();
 		copyValues(rec, testRec);
-		DataServiceAsync service = GWT
-				.create(DataService.class);
+		DataServiceClientesAsync service = GWT
+				.create(DataServiceClientes.class);
 		
 		//get newImageBytes
 		//TODO figure out where request.getUploadedFile is
@@ -119,8 +119,8 @@ public class SmartGWTRPCDataSource extends AbstractGWTRPCDataSource {
 		ListGridRecord rec = getEditedRecord(request);
 		ClientesDTO testRec = new ClientesDTO();
 		copyValues(rec, testRec);
-		DataServiceAsync service = GWT
-				.create(DataService.class);
+		DataServiceClientesAsync service = GWT
+				.create(DataServiceClientes.class);
 		
 		//Just do a fetch to refresh the item
 		if (testRec.isFetchOnly()) {
@@ -169,8 +169,8 @@ public class SmartGWTRPCDataSource extends AbstractGWTRPCDataSource {
 		final ListGridRecord rec = new ListGridRecord(data);
 		ClientesDTO testRec = new ClientesDTO();
 		copyValues(rec, testRec);
-		DataServiceAsync service = GWT
-				.create(DataService.class);
+		DataServiceClientesAsync service = GWT
+				.create(DataServiceClientes.class);
 		service.remove(testRec, new AsyncCallback<Void>() {
 			public void onFailure(Throwable caught) {
 				response.setStatus(RPCResponse.STATUS_FAILURE);

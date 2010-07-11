@@ -6,8 +6,8 @@ import com.clientesjson.client.dto.ClientesDTO;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
-@RemoteServiceRelativePath("data")
-public interface DataService extends RemoteService {
+@RemoteServiceRelativePath("dataClientes")
+public interface DataServiceClientes extends RemoteService {
     List<ClientesDTO> fetch ();
     
 	public ClientesDTO fetch(Long key);
