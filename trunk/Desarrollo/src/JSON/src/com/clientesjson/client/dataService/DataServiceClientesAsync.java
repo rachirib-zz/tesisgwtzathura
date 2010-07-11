@@ -5,7 +5,7 @@ import java.util.List;
 import com.clientesjson.client.dto.ClientesDTO;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public interface DataServiceAsync {
+public interface DataServiceClientesAsync {
 	public abstract void fetch (AsyncCallback<List<ClientesDTO>> asyncCallback);
 
 	public abstract void fetch (Long key, AsyncCallback<ClientesDTO> asyncCallback);

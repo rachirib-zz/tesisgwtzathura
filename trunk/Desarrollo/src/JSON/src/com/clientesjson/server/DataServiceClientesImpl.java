@@ -3,14 +3,14 @@ package com.clientesjson.server;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.clientesjson.client.dataService.DataService;
+import com.clientesjson.client.dataService.DataServiceClientes;
 import com.clientesjson.client.dto.ClientesDTO;
 import com.clientesjson.modelo.Cliente;
 import com.clientesjson.server.businessDelegate.BusinessDelegatorView;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-public class DataServiceImpl extends RemoteServiceServlet implements
-DataService {
+public class DataServiceClientesImpl extends RemoteServiceServlet implements
+DataServiceClientes {
 	//private JsonDBFacade clientesManager = null;
 //	public String getClientes() {
 //		clientesManager = new JsonDBFacade();

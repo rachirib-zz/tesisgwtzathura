@@ -1,9 +1,9 @@
 package com.clientesjson.client.entryPoint;
 
 
-import com.clientesjson.client.dataService.DataService;
-import com.clientesjson.client.dataService.DataServiceAsync;
-import com.clientesjson.client.smartds.SmartGWTRPCDataSource;
+import com.clientesjson.client.dataService.DataServiceClientes;
+import com.clientesjson.client.dataService.DataServiceClientesAsync;
+import com.clientesjson.client.smartds.SmartGWTDataSourceClientes;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
@@ -22,7 +22,7 @@ import com.smartgwt.client.widgets.layout.VLayout;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class ClientesJSON implements EntryPoint {
-	private DataServiceAsync dataService = GWT.create( DataService.class );
+	private DataServiceClientesAsync dataService = GWT.create( DataServiceClientes.class );
 	private IButton buttonSave = new IButton("Save");
 	private IButton buttonClean = new IButton("Clean");
 	private IButton buttonDelete = new IButton("Delete");
@@ -42,7 +42,7 @@ public class ClientesJSON implements EntryPoint {
 
 
 		form = new DynamicForm();
-		form.setDataSource(SmartGWTRPCDataSource.getInstance());
+		form.setDataSource(SmartGWTDataSourceClientes.getInstance());
 		form.setIsGroup(true);  
 		form.setGroupTitle("Update");  
 		form.setNumCols(4);
@@ -55,7 +55,7 @@ public class ClientesJSON implements EntryPoint {
 
 
 		grid =  new ListGrid();
-		grid.setDataSource(SmartGWTRPCDataSource.getInstance());
+		grid.setDataSource(SmartGWTDataSourceClientes.getInstance());
 
 		
 		grid.setWidth100(); 
