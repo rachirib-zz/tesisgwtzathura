@@ -1,4 +1,4 @@
-package com.clientesjson.client;
+package com.clientesjson.client.dto;
 
 
 import com.google.gwt.user.client.rpc.IsSerializable;

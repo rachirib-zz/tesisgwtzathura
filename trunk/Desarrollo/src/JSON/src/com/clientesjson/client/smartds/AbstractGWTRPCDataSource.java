@@ -1,4 +1,4 @@
-package com.clientesjson.client;
+package com.clientesjson.client.smartds;
 
 import com.smartgwt.client.data.DSRequest;
 import com.smartgwt.client.data.DSResponse;
